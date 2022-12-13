@@ -1,7 +1,7 @@
 """
 
 Jogo para o usuário adivinhar qual
-a palavra secreta, no qual o máximo de tentativas é 3.
+a palavra secreta
 
 """
 
@@ -11,11 +11,12 @@ a palavra secreta, no qual o máximo de tentativas é 3.
 palavra_secreta = 'paisagem'
 letras_acertadas =''
 tentativas = 0
-maximo_tentativas = 0
+tentativas_erradas = 0
+maximo_tentativas = 3
 while True:
     letra_digitada = input('Digite apenas uma letra')
-    tentativas += 1
     
+    tentativas += 1
 
     if len(letra_digitada)> 1: 
         print('Digite apenas uma letra')
@@ -31,11 +32,10 @@ while True:
             palavra_formada += letra_secreta
         else: 
             palavra_formada += '*'
-            maximo_tentativas += 1
-
+            tentativas_erradas +=1
+          
 
     print('Palavra formada', palavra_formada)
     print('Tentativas', tentativas)
-    if maximo_tentativas > 3:
-        print('Você excedeu o número máximos de tentativas')
-        break
+
+  
